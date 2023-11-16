@@ -16,23 +16,17 @@ class Node {
 class LinkedList {
     public:
         Node* head; //pointer to start element of list
-        Node* tail; //pointer to end of element of list
         
         LinkedList() {
             //initialize both pointers to nullptr because the list starts empty
             head = nullptr;
-            tail = nullptr;
         }
         
         void insertNode(int num) { //insert at beginning
             Node* newNode = new Node(num); //create pointer to new node
             newNode->next = head; //set next pointer of new node to point to node currently at start of list (head)
-            if(head == nullptr) { //if empty list
-                tail = newNode; //tail points to new last element (only element)
-            }
             
             head = newNode; //update head pointer to the new node that was placed at the start
-            //tail pointer does not update since this inserts at beginning of list
         }
         
         void deleteNode(int pos) { //delete from specified position, with head node being position "0"
@@ -58,11 +52,7 @@ class LinkedList {
             }
            
             cout<< prev->next->val <<" was deleted.\n"; //debug
-            prev->next = prev->next->next; //remove the link the node that is being removed, instead make it point to the node after it
-            if(prev->next == nullptr) { //check if the node removed was the last element (at the tail pointer)
-                tail = prev; //update the tail pointer to the new end of the list
-            }
-            
+            prev->next = prev->next->next; //remove the link the node that is being removed, instead make it point to the node after it    
         }
         
         int search(int pos) { //find value stored at position pos, with head node being position "0"
@@ -85,8 +75,7 @@ class LinkedList {
                 cout << curr->val << " -> "; //print out value stored in current node
                 curr = curr->next; //update current node to the next node in the list
             }
-            cout << "nullptr\n"; //prints nullptr to show end of list at tail rather than a 0
-            //cout << "tail" << tail->val << "\n"; //debugging
+            cout << "nullptr\n"; //prints nullptr to show end of list
         }
 };
 
