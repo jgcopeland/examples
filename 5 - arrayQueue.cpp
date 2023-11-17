@@ -21,7 +21,7 @@ class Queue {
     void enqueue(int num) {
         //check if queue is full
         if(isFull()) {
-            cout<<"Cannot enqueue element: Queue is Full.\n";
+            cout << "Cannot enqueue element: Queue is Full.\n";
             return;
         }
 
@@ -39,8 +39,15 @@ class Queue {
 
     //removes the element at the front of the queue
     int dequeue() {
-        //decrement front
-        int num = 0;
+        if(isEmpty()) {
+            cout << "Cannot dequeue element: Queue is Empty.\n";
+            return -99;
+        }
+
+        int num = arr[front]; //save value at current front to return
+        front--; //decrement front
+
+        cout << num << " was dequeued.\n"; //debug
         return num;
     }
 
@@ -105,11 +112,25 @@ int main() {
     myQueue.enqueue(3);
     myQueue.enqueue(4);
     myQueue.printQueue(false);
+    cout << "Front=" << myQueue.getFront() << "\n";
+    cout << "Rear=" << myQueue.getRear() << "\n";
 
     myQueue.enqueue(5);
     myQueue.printQueue(false);
     myQueue.enqueue(6);
     myQueue.printQueue(false);
+
+    myQueue.dequeue();
+    myQueue.printQueue(false);
+
+    myQueue.dequeue();
+    myQueue.dequeue();
+    myQueue.dequeue();
+    myQueue.printQueue(false);
+
+    myQueue.dequeue();
+    myQueue.printQueue(false);
+    myQueue.dequeue();
 
     return 0;
 }
