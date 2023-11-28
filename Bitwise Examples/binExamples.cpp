@@ -7,13 +7,13 @@ using namespace std;
 //How to do correctly? use header file? use extern somehow?
 
 int main() {
-    uint8_t num8 = 86;
+    uint8_t num8 = 0x56; //Is hex the standard format to use for embedded applications? Or are there cases where you use bin/oct?
     cout << int(num8) << " has " << countBinOnes(num8) << " binary ones.\n";
-    num8 = 1;
+    num8 = 0x1;
     cout << int(num8) << " has " << countBinOnes(num8) << " binary one.\n";
-    num8 = 191;
+    num8 = 0xBF;
     cout << int(num8) << " has " << countBinOnes(num8) << " binary ones.\n";
-    num8 = 13;
+    num8 = 0xD;
     cout << int(num8) << " has " << countBinOnes(num8) << " binary ones.\n";
 
     cout << "\n\n";
