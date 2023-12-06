@@ -20,4 +20,7 @@ void swapBits(uint8_t &num1, uint8_t &num2, int bitPos, int bitNum) {
             }
         }
     }
+
+    //xor swap:   https://en.wikipedia.org/wiki/XOR_swap_algorithm
+
 }
