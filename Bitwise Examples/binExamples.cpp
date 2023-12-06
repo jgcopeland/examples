@@ -1,6 +1,7 @@
 #include <iostream>
 #include "countBinOnes.h"
 #include "setResetBit.h"
+#include "swapBits.h"
 using namespace std;
 
 //File used as main.cpp to call all binary example functions
@@ -53,7 +54,21 @@ int main() {
 
     num8 = 0xBF;
     bit = 5;
-    cout << int(num8) << " had bit " << bit << " reset. It is now " << resetBit(num8, bit) << ".\n";
+    cout << int(num8) << " had bit " << bit << " reset. It is now " << resetBit(num8, bit) << ".\n\n\n";
+
+// swapBit.h
+//------------------------------------------------------------------------------------
+    uint8_t num1 = 0x9C; //156
+    uint8_t num2 = 0x72; //114
+    cout<<"Num1: " << int(num1) << "\nNum2: " << int(num2) << "\n";
+    swapBits(num1, num2, 4, 3);
+    cout<<"Num1: " << int(num1) << "\nNum2: " << int(num2) << "\n";
+
+    num1 = 0x01; //1
+    num2 = 0x72; //114
+    cout<<"Num1: " << int(num1) << "\nNum2: " << int(num2) << "\n";
+    swapBits(num1, num2, 0, 1);
+    cout<<"Num1: " << int(num1) << "\nNum2: " << int(num2) << "\n";
 
     return 0;
 }
