@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 //sets the bit (=1) at the provided position (0-7) in the provided 8 bit integer

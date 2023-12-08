@@ -1,5 +1,5 @@
 #include <iostream>
-//#include <math.h>
+
 using namespace std;
 
 //Counts the number of binary 1s in a given 8 bit integer

@@ -1,7 +1,6 @@
 #include <iostream>
-#include "countBinOnes.h"
-#include "setResetBit.h"
-#include "swapBits.h"
+#include "binFunctions.h"
+
 using namespace std;
 
 //File used as main.cpp to call all binary example functions
