@@ -1,5 +1,5 @@
 #include <iostream>
-#include "binFunctions.h"
+#include "binFunctions.hpp"
 
 using namespace std;
 
