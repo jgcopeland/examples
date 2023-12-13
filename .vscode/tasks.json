@@ -11,6 +11,7 @@
                 "${fileDirname}/countBinOnes.cpp",
                 "${fileDirname}/swapBits.cpp",
                 "${fileDirname}/setResetBit.cpp",
+                "${fileDirname}/leetCodeExercises.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
@@ -38,6 +39,7 @@
                 "${fileDirname}/countBinOnes.cpp",
                 "${fileDirname}/swapBits.cpp",
                 "${fileDirname}/setResetBit.cpp",
+                "${fileDirname}/leetCodeExercises.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
