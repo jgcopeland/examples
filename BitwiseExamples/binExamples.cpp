@@ -90,8 +90,23 @@ int main() {
     pos1 = 3;
     pos2 = 8;
     bitNum = 4;
-    cout << num1 << " had " << bitNum <<" bit from positions " << pos1 << " and " << pos2 << " swapped. Now it is " << swapBits(num1, pos1, pos2, bitNum) << ".\n";
+    cout << num1 << " had " << bitNum <<" bit from positions " << pos1 << " and " << pos2 << " swapped. Now it is " << swapBits(num1, pos1, pos2, bitNum) << ".\n\n";
     // 1 1 0 1 [0 1 0 1] 0 [1 1 1 0] 1 1 0 -> 1 1 0 1 [1 1 1 0] 0 [0 1 0 1] 1 1 0 = 54,646 -> 56,878
+
+
+    // reverseBits()
+    //------------------------------------------------------------------------------------
+    num1 = 0xF0F0; //61,680
+    cout << num1 << " had its bits reversed, it is now " << reverseBits(num1) << ".\n";
+    // 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 -> 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 = 61680 -> 3855
+
+    num1 = 0x4E9; //11 bits long (odd #)
+    cout << num1 << " had its bits reversed, it is now " << reverseBits(num1) << ".\n";
+    // 1 0 0 1 1 1 0 1 0 0 1 -> 1 0 0 1 0 1 1 1 0 0 1 = 1257 -> 1209
+
+    num1 = 0x23AC; //9,132
+    cout << num1 << " had its bits reversed, it is now " << reverseBits(num1) << ".\n";
+    // 1 0 0 0 1 1 1 0 1 0 1 1 0 0 -> 0 0 1 1 0 1 0 1 1 1 0 0 0 1 = 9132 -> 3441
 
     return 0;
 }
