@@ -50,22 +50,29 @@ int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
 
     for(int i = 0; i<gas.size(); i++) { //for each potential start station 0 -> n-1
         int tank = gas[i]; //gas tank starts at empty
-        int visited = 1; //track stations visited during route
+        int visited = 0; //track stations visited during route
+        cout << "Attempting to start from station " << i << ".\n";
         for(int j = i; visited != gas.size(); j++) {
+            cout <<"Tank: " << tank << ", Cost: " << cost[j%gas.size()] << "\n";
+
             if(tank<cost[j%gas.size()]) {
-                cout << "Cannot travel from station " << j << " to station " << j+1 << ".\n";
+                cout << "Cannot travel from station " << j%gas.size() << " to station " << (j+1)%gas.size() << ".\n";
                 cout << "Starting from station " << i << " is not a viable route.\n";
                 break;
             }
             else {
-                tank -= cost[j];
-                cout << "Travelled from station " << j << " to station " << j+1 << ".\n";
+                tank -= cost[j%gas.size()];
+                tank += gas[(j+1)%gas.size()];
+                visited++;
+                cout << "Travelled from station " << j%gas.size() << " to station " << (j+1)%gas.size() << ".\n";
             }
         }
         if(visited == gas.size()) {
+            cout << "The route is viable by starting at station " << i << ".\n\n";
             return i;
         }
     }
+    cout << "No viable route to complete the circuit.\n\n";
     return -1;
 }
 
@@ -74,8 +81,11 @@ int main() {
     //134. Gas Station
     vector<int> gas = {1,2,3,4,5};
     vector<int> cost = {3,4,5,1,2};
-    canCompleteCircuit(vector<int>& gas, vector<int>& cost);
+    canCompleteCircuit(gas, cost);
     
+    gas = {2,3,4};
+    cost = {3,4,3};
+    canCompleteCircuit(gas, cost);
     
     return 0;
 }
