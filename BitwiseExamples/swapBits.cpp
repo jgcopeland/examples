@@ -8,10 +8,10 @@ using namespace std;
 //additional ref: https://www.geeksforgeeks.org/how-to-swap-two-bits-in-a-given-integer/
 int swapBits(int num, int bitPos1, int bitPos2, int bitNum) {
     //isolates the bits to be swapped
-    int bits1 = (num >> bitPos1) & int(pow(2,bitNum)-1);
+    int bits1 = (num >> bitPos1) & int(pow(2,bitNum)-1); //ex: bitNum = 4 -> (2^4)-1 = 15 -> & 1111
     int bits2 = (num >> bitPos2) & int(pow(2,bitNum)-1);
 
-    int x = bits1 ^ bits2; //XORs the bits with eachother
+    int x = bits1 ^ bits2; //XORs the bits with each other
     x = (x << bitPos1) | (x << bitPos2); // moves XOR's bits back to the original positions
 
     return num^x; //XORs the original number with the new bits in the shifted (to be swapped) positions

@@ -25,7 +25,7 @@ using namespace std;
 
 // Follow up: If this function is called many times, how would you optimize it?
 
-int reverseBits(int num) {
+int reverseBits(int num) { 
     //repeatedly swap pairs of bits at opposite sides of number
     int halfSize = int((log2(num)+1)/2);
     for(int i = log2(num), j=0 ; i>=halfSize; i--, j++) { //iterates in both directions towards middle

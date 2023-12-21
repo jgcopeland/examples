@@ -1,4 +1,3 @@
-#include <vector>
 #ifndef BINFUNC_H
 #define BINFUNC_H
 
